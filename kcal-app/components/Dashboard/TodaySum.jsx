@@ -79,7 +79,7 @@ export default function TodaySum() {
                 <div className='flex flex-col items-center  gap-2'>
                     <h3 className='mediumHeader font-bold'>Kalorie</h3>
                     <Doughnut data={data} options={options} className='max-h-[200px]'/>
-                    <h4 className='font-bold'>1000kcal/2000kcal</h4>
+                    <h4 className='font-bold'>1000/2000kcal</h4>
                 </div>
                 <div className='flex flex-col items-center  gap-2'>
                     <h3 className='mediumHeader font-bold'>Białko</h3>
