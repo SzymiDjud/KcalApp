@@ -87,6 +87,7 @@ export default function ProductsTable(props){
                     columns={columns}
                     data={tableData}
                     customStyles={customStyles}
+                    pagination
         />
         </div>
     )

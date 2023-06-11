@@ -35,6 +35,9 @@ body {
   background-color: #005EB8 !important;
   color: #FFF !important;
 }
+.ps-active img {
+  filter: invert(1);
+}
 
 .box-shadow {
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.16);
@@ -48,6 +51,10 @@ body {
   font-size: 18px;
 }
 
+.blueText {
+  color: #005EB8;
+}
+
 .blueButton {
   background-color: #005EB8;
   border: 2px solid #005EB8;
@@ -59,4 +66,8 @@ body {
 }
 .blueButton:hover img {
   filter: invert(1);
+}
+
+.sideBarIcon {
+  max-width: 25px;
 }/*# sourceMappingURL=globals.css.map */

@@ -80,6 +80,7 @@ export default function HistoryTable(props){
                     columns={columns}
                     data={tableData}
                     customStyles={customStyles}
+                    pagination
         />
         </div>
     )

@@ -13,11 +13,11 @@ export default function SideMenu(props){
         <Sidebar >
                 <Menu>
                         <MenuItem disabled={true}>KCALAPP</MenuItem>
-                        <MenuItem active={router.pathname === "/Dashboard"  || router.pathname === "/Today"} component={<Link href="/Dashboard" />}> Panel główny</MenuItem>
-                        <MenuItem active={router.pathname === "/Products" || router.pathname === "/AddProduct"} component={<Link href="/Products" />}> Produkty </MenuItem>
-                        <MenuItem active={router.pathname === "/History"} component={<Link href="/History" />}> Historia </MenuItem>
-                        <MenuItem active={router.pathname === "/Profile"} component={<Link href="/Profile" />}> Twój profil </MenuItem>
-                        <MenuItem> Wyloguj </MenuItem>
+                        <MenuItem icon={<img src="/home.svg" className='sideBarIcon'/>} active={router.pathname === "/Dashboard"  || router.pathname === "/Today"} component={<Link href="/Dashboard" />}> Panel główny</MenuItem>
+                        <MenuItem icon={<img src="/products.svg" className='sideBarIcon'/>} active={router.pathname === "/Products" || router.pathname === "/AddProduct"} component={<Link href="/Products" />}> Produkty </MenuItem>
+                        <MenuItem icon={<img src="/calendar.svg" className='sideBarIcon'/>} active={router.pathname === "/History"} component={<Link href="/History" />}> Historia </MenuItem>
+                        <MenuItem icon={<img src="/person.svg" className='sideBarIcon'/>} active={router.pathname === "/Profile"} component={<Link href="/Profile" />}> Twój profil </MenuItem>
+                        <MenuItem icon={<img src="/Logout.svg" className='sideBarIcon'/>}> Wyloguj </MenuItem>
                 </Menu>
             </Sidebar>
     )

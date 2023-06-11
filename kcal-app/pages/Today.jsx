@@ -10,7 +10,13 @@ export default function Today(props){
             <div className="flex flex-col bg-white rounded-xl box-shadow p-4 min-w-full gap-4">
             <h2 className="bigHeader">Zarządzaj posiłkami</h2>
                 <TodayProductsTable edit={true}/>
-                
+                <h4 className="blueText">Podsumowanie:</h4>
+                <div className="flex gap-8">
+                    <p>Kalorie: <b className="blueText">100</b></p>
+                    <p>Białko: <b className="blueText">200</b></p>
+                    <p>Węglowodany: <b className="blueText">400</b></p>
+                    <p>Tłuszcze: <b className="blueText">800</b></p>
+                </div>
             </div>            
             <div className="flex flex-col bg-white rounded-xl box-shadow p-4 min-w-full gap-4">
             <h2 className="bigHeader">Dodaj posiłki</h2>

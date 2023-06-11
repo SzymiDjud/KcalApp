@@ -137,7 +137,6 @@ export default function TodayProductsTable(props){
                     data={tableData}
                     customStyles={customStyles}
         />
-        
         </div>
     )
 }
