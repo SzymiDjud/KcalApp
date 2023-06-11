@@ -74,7 +74,7 @@ export default function TodaySum() {
 
     return(
         <div className="flex flex-col bg-white rounded-xl box-shadow p-4 min-w-full">
-            <h2 className="bigHeader">Dzisiejsze podsumowanie</h2>
+            <h2 className="bigHeader font-bold">Dzisiejsze podsumowanie</h2>
             <div className="grid grid-cols-4 gap-4 min-w-full">
                 <div className='flex flex-col items-center  gap-2'>
                     <h3 className='mediumHeader font-bold'>Kalorie</h3>

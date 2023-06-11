@@ -53,7 +53,7 @@ export default function AddProductForm(props){
 
 
     return(
-        <div className='flex flex-col bg-white rounded-xl box-shadow p-6 min-w-full'>
+        <div className='flex flex-col bg-white  min-w-full'>
             <form onSubmit={formik.handleSubmit} className='flex flex-col gap-6'>
                         <TextField
                             id="name"
