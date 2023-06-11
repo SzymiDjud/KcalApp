@@ -24,29 +24,29 @@ export default function addProducts(props){
             sortable: true,
         },
         {
-            name: 'Ilośc kalorii',
+            name: 'Kalorie',
             selector: row => row.kcal,
             sortable: true,
             
         },
         {
-            name: 'Ilośc białka',
+            name: 'Białko',
             selector: row => row.protein,
             sortable: true,
             
         },                      
         {
-            name: 'Ilośc węglowodowanów',
+            name: 'Węglowodany',
             selector: row => row.carbs,
             sortable: true,
             
         },
         {
-            name: 'Ilośc tłuszczów',
+            name: 'Tłuszcze',
             selector: row => row.fat,
             sortable: true,
             
-        },
+        },             
         {
             name: 'Dodaj',
             selector: row => <button onClick={()=>addProduct(row.id)} className='bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded'>Dodaj</button>,

@@ -9,31 +9,31 @@ export default function HistoryTable(props){
             sortable: true,
         },
         {
-            name: 'Ilośc kalorii',
+            name: 'Kalorie',
             selector: row => row.kcal,
             sortable: true,
             
         },
         {
-            name: 'Ilośc białka',
+            name: 'Białko',
             selector: row => row.protein,
             sortable: true,
             
         },                      
         {
-            name: 'Ilośc węglowodowanów',
+            name: 'Węglowodany',
             selector: row => row.carbs,
             sortable: true,
             
         },
         {
-            name: 'Ilośc tłuszczów',
+            name: 'Tłuszcze',
             selector: row => row.fat,
             sortable: true,
             
-        },    
+        },             
     ];
-    
+   
 
     const [tableData, setTableData] = useState(
 [
