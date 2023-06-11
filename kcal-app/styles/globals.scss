@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -14,49 +15,50 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
-
-.ps-sidebar-root {
+.ps-sidebar-root{
   width: 15% !important;
   min-width: 15% !important;
 }
-
-.ps-sidebar-container {
+.ps-sidebar-container{
   background-color: #FFF !important;
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.16);
   border-radius: 16px;
   width: 100% !important;
 }
-
-.ps-active {
+.ps-active{
   background-color: #005EB8 !important;
   color: #FFF !important;
 }
-
-.box-shadow {
+.box-shadow{
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.16);
 }
 
-.bigHeader {
+.bigHeader{
   font-size: 24px;
 }
-
-.mediumHeader {
+.mediumHeader{
   font-size: 18px;
 }
 
-.blueButton {
+.blueButton{
   background-color: #005EB8;
   border: 2px solid #005EB8;
 }
-
-.blueButton:hover {
+.blueButton:hover{
   background-color: #FFF;
   color: black;
+  img{
+    filter: invert(1);
+  }
+
 }
-.blueButton:hover img {
-  filter: invert(1);
-}/*# sourceMappingURL=globals.css.map */
