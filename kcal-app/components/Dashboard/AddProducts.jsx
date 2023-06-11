@@ -106,7 +106,7 @@ export default function addProducts(props){
 
 
     return(
-        <div className='flex flex-col  gap-4'>
+        <div className='flex flex-col gap-4'>
             <div className='flex gap-4 items-center'>
                 Filtruj:
                 <TextField
@@ -128,12 +128,14 @@ export default function addProducts(props){
                                 size="small"
                             />  
             </div>
-
+        <div className='flex flex-col bg-white rounded-xl box-shadow min-w-full'>
         <DataTable
                     columns={columns}
                     data={tableData}
                     customStyles={customStyles}
         />
+        </div>
+
         
         </div>
     )
