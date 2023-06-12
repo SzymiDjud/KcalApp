@@ -25,49 +25,48 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-.ps-sidebar-root{
+.ps-sidebar-root {
   width: 15% !important;
   min-width: 15% !important;
 }
-.ps-sidebar-container{
-  background-color: #FFF !important;
+.ps-sidebar-container {
+  background-color: #fff !important;
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.16);
   border-radius: 16px;
   width: 100% !important;
 }
-.ps-active{
-  background-color: #005EB8 !important;
-  color: #FFF !important;
-  img{
-    filter:  invert(1)
+.ps-active {
+  background-color: #005eb8 !important;
+  color: #fff !important;
+  img {
+    filter: invert(1);
   }
 }
-.box-shadow{
+.box-shadow {
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.16);
 }
 
-.bigHeader{
+.bigHeader {
   font-size: 24px;
 }
-.mediumHeader{
+.mediumHeader {
   font-size: 18px;
 }
-.blueText{
-  color: #005EB8;
+.blueText {
+  color: #005eb8;
 }
-.blueButton{
-  background-color: #005EB8;
-  border: 2px solid #005EB8;
+.blueButton {
+  background-color: #005eb8;
+  border: 2px solid #005eb8;
 }
-.blueButton:hover{
-  background-color: #FFF;
+.blueButton:hover {
+  background-color: #fff;
   color: black;
-  img{
+  img {
     filter: invert(1);
   }
-
 }
 
-.sideBarIcon{
+.sideBarIcon {
   max-width: 25px;
 }
