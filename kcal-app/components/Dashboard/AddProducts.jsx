@@ -96,29 +96,37 @@ export default function addProducts(props){
     
     };
 
+    const handleNameFilterChange = (e) => {
+        setNameFilter(e.target.value.toLowerCase())
+    }
+
 
     const [nameFilter, setNameFilter] = useState("");
     const [brandFilter, setBrandFilter] = useState("");
 
-    useEffect(()=>{
-
-    },[nameFilter,brandFilter])
+ 
 
 
+    const filteredItems = tableData.filter(
+		item => item.name && item.name.toLowerCase().includes(nameFilter),
+	);
+
+    console.log(filteredItems)
+    console.log(nameFilter)
     return(
         <div className='flex flex-col gap-4'>
             <div className='flex gap-4 items-center'>
                 Filtruj:
                 <TextField
                                 id="name"
-                                onChange={()=>setNameFilter()}
+                                onChange={(e)=>handleNameFilterChange(e)}
                                 value={nameFilter}
                                 className='w-1/4 '
                                 label="Nazwa produktu" 
                                 variant="outlined"
                                 size="small"
                             />                  
-                <TextField
+                {/*<TextField
                                 id="name"
                                 onChange={()=>setBrandFilter()}
                                 value={brandFilter}
@@ -126,12 +134,12 @@ export default function addProducts(props){
                                 label="Nazwa marki" 
                                 variant="outlined"
                                 size="small"
-                            />  
+    />  */}
             </div>
         <div className='flex flex-col bg-white rounded-xl box-shadow min-w-full'>
         <DataTable
                     columns={columns}
-                    data={tableData}
+                    data={filteredItems}
                     customStyles={customStyles}
         />
         </div>

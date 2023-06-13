@@ -5,6 +5,8 @@ import { useSession } from "next-auth/react";
 export default function TodayProductsTable(props){
     const { data: session, status } = useSession()
 
+   
+
     const columns = [
         {
             name: 'Nazwa produktu',

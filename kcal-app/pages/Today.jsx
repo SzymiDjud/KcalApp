@@ -8,11 +8,25 @@ function Today(props){
 
     const [refresh, setRefresh] = useState(false)
 
+    const deleteProduct = (id) => {
+      fetch(process.env.API_URL + `api/product-entries/${id}`,{
+        method: 'DELETE',
+        headers: {
+            'Content-Type' : 'application/json',
+            Authorization: `Bearer ${session.token}`,
+        },
+    })
+    .then((res)=>{if(res.ok){return res.json();}})
+    .then((json)=>{
+        setRefresh(element => !element)
+    })
+    }
+
     return(
         <div className="flex flex-col gap-4 min-w-full px-6 py-2">
             <div className="flex flex-col bg-white rounded-xl box-shadow p-4 min-w-full gap-4">
             <h2 className="bigHeader font-bold">Zarządzaj posiłkami</h2>
-                <TodayProductsTable edit={true}/>
+                <TodayProductsTable edit={true} deleteProduct={deleteProduct}/>
                 <h4 className="blueText font-bold">Podsumowanie:</h4>
                 <div className="flex gap-8">
                     <p>Kalorie: <b className="blueText">100</b></p>
