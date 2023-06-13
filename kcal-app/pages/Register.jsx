@@ -51,6 +51,7 @@ function Register(props) {
         }
       });
     },
+    
   });
 
   return (

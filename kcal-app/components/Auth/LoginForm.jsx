@@ -19,6 +19,7 @@ export default function LoginForm(props) {
             redirect: false,
             callbackUrl,
           })
+          console.log(result)
           if(result.status === 200){
             window.location.href = "/Dashboard"
           }
