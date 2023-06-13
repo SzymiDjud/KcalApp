@@ -22,7 +22,7 @@ export default async function auth(req, res) {
                 headers: { "Content-Type": "application/json" }
               })
               const user = await res.json()
-              
+              conosle.log(user)
 
           if (res.ok) {
             return user
