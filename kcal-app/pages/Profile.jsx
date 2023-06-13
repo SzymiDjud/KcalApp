@@ -1,5 +1,27 @@
 import { getSession } from "next-auth/react"
+import { useEffect, useState } from "react"
+import { useSession } from "next-auth/react";
+
 function Profile(props){
+
+    const [userData, setUserData] = useState()
+    const { data: session, status } = useSession()
+  
+          /*useEffect(()=>{
+    fetch(process.env.API_URL + `api/profile/`,{
+        method: 'GET',
+        headers: {
+            'Content-Type' : 'application/json',
+            Authorization: `Bearer ${session.token}`,
+        },
+    })
+    .then((res)=>{if(res.ok){return res.json();}})
+    .then((json)=>{
+        setUserData(json)
+    })
+  },[]) */
+
+
     return(
         <div className="min-w-full px-6 py-2">
             <div className="flex flex-col bg-white rounded-xl box-shadow p-4 min-w-full gap-4">

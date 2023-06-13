@@ -1,7 +1,9 @@
 import HistoryTable from "@/components/History/HistoryTable"
 import { getSession } from "next-auth/react"
 
+
  function History(props){
+
     return(
         <div className="min-w-full px-6 py-2">
             <div className="flex flex-col bg-white rounded-xl box-shadow p-4 min-w-full gap-4">

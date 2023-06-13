@@ -1,6 +1,10 @@
 import DataTable from 'react-data-table-component';
-import { useState } from 'react';
+import { useEffect, useState } from "react"
+import { useSession } from "next-auth/react";
 export default function HistoryTable(props){
+
+    const { data: session, status } = useSession()
+
 
     const columns = [
         {
@@ -22,7 +26,7 @@ export default function HistoryTable(props){
         },                      
         {
             name: 'Węglowodany',
-            selector: row => row.carbs,
+            selector: row => row.carbohydrate,
             sortable: true,
             
         },
@@ -34,7 +38,6 @@ export default function HistoryTable(props){
         },             
     ];
    
-
     const [tableData, setTableData] = useState(
 [
     {
@@ -42,7 +45,7 @@ export default function HistoryTable(props){
         date: "2023-06-11",
         kcal: 100,
         protein: 10,
-        carbs: 20,
+        carbohydrate: 20,
         fat: 30,
     },    
     {
@@ -50,12 +53,26 @@ export default function HistoryTable(props){
         date: "2023-06-10",
         kcal: 1000,
         protein: 100,
-        carbs: 200,
+        carbohydrate: 200,
         fat: 300,
     },
 ]
 
     );
+
+          /*useEffect(()=>{
+    fetch(process.env.API_URL + `api/history-per-day/`,{
+        method: 'GET',
+        headers: {
+            'Content-Type' : 'application/json',
+            Authorization: `Bearer ${session.token}`,
+        },
+    })
+    .then((res)=>{if(res.ok){return res.json();}})
+    .then((json)=>{
+        setTableData(json)
+    })
+},[]) */
     
     
     const customStyles = {

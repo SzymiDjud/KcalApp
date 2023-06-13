@@ -1,14 +1,16 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import TextField from '@mui/material/TextField';
-
+import { useSession } from "next-auth/react";
 export default function AddProductForm(props){
+
+    const { data: session, status } = useSession()
 
     const formik = useFormik({
         initialValues: {
           name: '',
           brand: '',
-          weight: 0,
+          basic_amount_gram: 0,
           kcal: 0,
           protein: 0,
           carbohydrate: 0,
@@ -19,7 +21,7 @@ export default function AddProductForm(props){
             .required('Required'),
             brand: Yup.string()
             .required('Required'),            
-            weight: Yup.string()
+            basic_amount_gram: Yup.string()
             .required('Required'),            
             kcal: Yup.string()
             .required('Required'),            
@@ -32,13 +34,13 @@ export default function AddProductForm(props){
 
         }),
         onSubmit: values => {          
-            fetch(process.env.API_URL + `products/`,{
+            fetch(process.env.API_URL + `api/products/`,{
                 method: 'POST',
                 headers: {
                     
-                    Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+                    Authorization: `Bearer ${session.token}`,
                 },
-                body: formData,
+                body: JSON.stringify(values),
             })
             .then((res)=>res.json()
             .then((json)=>{
@@ -47,7 +49,6 @@ export default function AddProductForm(props){
             )
         },
       });
-
 
 
 
@@ -82,17 +83,17 @@ export default function AddProductForm(props){
                             helperText={formik.errors.brand}
                         />                                
                         <TextField
-                            id="weight"
-                            onChange={formik.handleChange("weight")}
+                            id="basic_amount_gram"
+                            onChange={formik.handleChange("basic_amount_gram")}
                             onBlur={formik.handleBlur}
-                            value={formik.values.weight}
+                            value={formik.values.basic_amount_gram}
                             className='w-1/4'
                             label="Waga produktu" 
                             variant="outlined"
-                            error = {formik.errors.weight ? (
+                            error = {formik.errors.basic_amount_gram ? (
                                 true
                             ) : null}
-                            helperText={formik.errors.weight}
+                            helperText={formik.errors.basic_amount_gram}
                         />         
                         <TextField
                             id="kcal"

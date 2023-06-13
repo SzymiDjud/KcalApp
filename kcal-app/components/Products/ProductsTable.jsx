@@ -1,6 +1,10 @@
 import DataTable from 'react-data-table-component';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSession } from "next-auth/react";
+
 export default function ProductsTable(props){
+
+    const { data: session, status } = useSession()
 
     const columns = [
         {
@@ -27,7 +31,7 @@ export default function ProductsTable(props){
         },                      
         {
             name: 'Węglowodany',
-            selector: row => row.carbs,
+            selector: row => row.carbohydrate,
             sortable: true,
             
         },
@@ -49,7 +53,7 @@ export default function ProductsTable(props){
         brand: "Berlinki",
         kcal: 100,
         protein: 10,
-        carbs: 20,
+        carbohydrate: 20,
         fat: 30,
     },    
     {
@@ -58,7 +62,7 @@ export default function ProductsTable(props){
         brand: "Nawłoka",
         kcal: 1000,
         protein: 100,
-        carbs: 200,
+        carbohydrate: 200,
         fat: 300,
     },
 ]
@@ -80,6 +84,20 @@ export default function ProductsTable(props){
         }
     
     };
+    
+    /*useEffect(()=>{
+    fetch(process.env.API_URL + `api/products/`,{
+        method: 'GET',
+        headers: {
+            'Content-Type' : 'application/json',
+            Authorization: `Bearer ${session.token}`,
+        },
+    })
+    .then((res)=>{if(res.ok){return res.json();}})
+    .then((json)=>{
+        setTableData(json)
+    })
+},[]) */
 
 
     return(

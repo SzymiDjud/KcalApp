@@ -2,10 +2,10 @@ import DataTable from 'react-data-table-component';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import TextField from '@mui/material/TextField';
-
+import { useSession } from "next-auth/react";
 export default function addProducts(props){
 
-
+    const { data: session, status } = useSession()
 
 
     const addProduct = (id) =>{
