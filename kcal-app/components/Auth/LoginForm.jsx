@@ -54,8 +54,6 @@ export default function LoginForm(props) {
       });
 
 
-
-
     return(
         <div className="flex flex-col gap-4 px-6 py-2">
             <div className="flex flex-col bg-white rounded-xl box-shadow p-12  gap-4 items-center">

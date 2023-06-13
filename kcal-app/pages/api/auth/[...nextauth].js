@@ -15,11 +15,15 @@ export default async function auth(req, res) {
       },
 
       async authorize(credentials) {
+        
         try {
             const res = await fetch("https://localhost:7060/api/auth/login/", {
                 method: 'POST',
-                body: JSON.stringify(credentials),
-                headers: { "Content-Type": "application/json" }
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  email: credentials.email,
+                  password: credentials.password,
+                }),
               })
               console.log(res)
               const user = await res.json()
