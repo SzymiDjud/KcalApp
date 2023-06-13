@@ -38,7 +38,7 @@ export default function Register(props){
             fetch(process.env.API_URL + `api/auth/register/`,{
                 method: 'POST',
                 headers: {
-                    
+                    'Content-Type' : 'application/json',
                     
                 },
                 body: JSON.stringify(values),
