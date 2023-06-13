@@ -3,9 +3,12 @@ import * as Yup from 'yup';
 import TextField from '@mui/material/TextField';
 import { signIn } from 'next-auth/react';
 import Link from 'next/link';
-
+import { useState } from 'react';
 
 export default function LoginForm(props) {
+
+
+    const [error, setError] = useState(null);
 
     const handleLogin = async (values) => {
         try {
@@ -19,6 +22,9 @@ export default function LoginForm(props) {
           if(result.status === 200){
             window.location.href = "/Dashboard"
           }
+          else{
+            setError("Błędne dane logowania")
+          }
         } catch (error) {
          console.log(error)
         }
@@ -30,7 +36,6 @@ export default function LoginForm(props) {
         initialValues: {
           username: '',
           password: '',
-          confirmPassword: '',
         },
         validationSchema: Yup.object({
             username: Yup.string()
@@ -82,7 +87,7 @@ export default function LoginForm(props) {
                             ) : null}
                             helperText={formik.errors.password}
                         />                        
-                        
+                       { error && <p className='text-red-600'>{error}</p>}
                         <button type="submit" className="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded">Zaloguj się</button>
                         <span>Nie masz konta? <Link href="/Register"> <b>Zarejestruj się</b></Link></span>
                 </form>          

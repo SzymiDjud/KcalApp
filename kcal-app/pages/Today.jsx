@@ -2,7 +2,8 @@ import TodayProductsTable from "@/components/Dashboard/TodayProductsTable"
 import AddProducts from "@/components/Dashboard/AddProducts"
 import { useState } from "react"
 import { getSession } from "next-auth/react"
-
+import Link from "next/link"
+import Button from "@/components/Button"
 function Today(props){
 
     const [refresh, setRefresh] = useState(false)
@@ -23,6 +24,7 @@ function Today(props){
             <div className="flex flex-col bg-white rounded-xl box-shadow p-4 min-w-full gap-4">
             <h2 className="bigHeader">Dodaj posiłki</h2>
                 <AddProducts />
+                <Link href="/AddProduct"><Button style={" blueButton justify-center items-center gap-2  text-white"}  text={"Dodaj produkt"} add={true} /></Link>
             </div>
                 
             
