@@ -57,7 +57,7 @@ function Today(props){
             </div>            
             <div className="flex flex-col bg-white rounded-xl box-shadow p-4 min-w-full gap-4">
             <h2 className="bigHeader">Dodaj posiłki</h2>
-                <AddProducts />
+                <AddProducts  addProduct={addProduct}/>
                 <Link href="/AddProduct"><Button style={" blueButton justify-center items-center gap-2  text-white"}  text={"Dodaj produkt"} add={true} /></Link>
             </div>
                 
