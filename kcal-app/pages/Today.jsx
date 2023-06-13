@@ -1,7 +1,9 @@
 import TodayProductsTable from "@/components/Dashboard/TodayProductsTable"
 import AddProducts from "@/components/Dashboard/AddProducts"
 import { useState } from "react"
-export default function Today(props){
+import { getSession } from "next-auth/react"
+
+function Today(props){
 
     const [refresh, setRefresh] = useState(false)
 
@@ -27,3 +29,22 @@ export default function Today(props){
         </div>
     )
 }
+
+export async function getServerSideProps(context) {
+    const session = await getSession({ req: context.req });
+  
+    if (!session) {
+      return {
+        redirect: {
+          destination: '/Login',
+          permanent: false,
+        },
+      };
+    }
+  
+    return {
+      props: { session },
+    };
+  }
+
+  export default Today;

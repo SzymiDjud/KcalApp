@@ -1,7 +1,7 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import TextField from '@mui/material/TextField';
-
+import Link from 'next/link';
 
 export default function Register(props){
 
@@ -46,8 +46,8 @@ export default function Register(props){
       });
 
     return(
-        <div className="flex flex-col gap-4 min-w-full px-6 py-2">
-            <div className="flex flex-col bg-white rounded-xl box-shadow p-4 min-w-full gap-4 items-center">
+        <div className="flex flex-col gap-4  px-6 py-2">
+            <div className="flex flex-col bg-white rounded-xl box-shadow p-12  gap-4 items-center">
                 <h2 className="bigHeader">Zarejestruj się</h2> 
                 <form onSubmit={formik.handleSubmit} className='flex flex-col gap-6'>
                         <TextField
@@ -92,6 +92,7 @@ export default function Register(props){
                             helperText={formik.errors.confirmPassword}
                         />
                         <button type="submit" className="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded">Zarejestruj się</button>
+                        <span>Masz już konto? <Link href="/Login"> <b>Zaloguj się</b></Link></span>
                 </form>          
             </div>
         </div>
