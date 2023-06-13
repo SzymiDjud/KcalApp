@@ -16,7 +16,7 @@ export default async function auth(req, res) {
 
       async authorize(credentials) {
         try {
-            const res = await fetch("http://91.150.170.204:9022/rest-auth/login/", {
+            const res = await fetch("https://localhost:7060/api/auth/login/", {
                 method: 'POST',
                 body: JSON.stringify(credentials),
                 headers: { "Content-Type": "application/json" }
