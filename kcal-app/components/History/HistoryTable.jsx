@@ -60,7 +60,7 @@ export default function HistoryTable(props){
 
     );
 
-    /*useEffect(()=>{
+    useEffect(()=>{
         fetch(process.env.API_URL + `api/history-per-day/`,{
             method: 'GET',
             headers: {
@@ -72,7 +72,7 @@ export default function HistoryTable(props){
         .then((json)=>{
             setTableData(json)
         })
-    },[]) */
+    },[])
     
     
     const customStyles = {
