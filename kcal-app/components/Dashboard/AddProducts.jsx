@@ -49,7 +49,7 @@ export default function addProducts(props){
         },             
         {
             name: 'Dodaj',
-            selector: row => <button onClick={()=>addProduct(row.id)} className='bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded'>Dodaj</button>,
+            selector: row => <button onClick={()=>props.addProduct(row.id,1)} className='bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded'>Dodaj</button>,
             sortable: true,
             
         },  
@@ -106,13 +106,26 @@ export default function addProducts(props){
 
  
 
+     /*useEffect(()=>{
+    fetch(process.env.API_URL + `api/products/`,{
+        method: 'GET',
+        headers: {
+            'Content-Type' : 'application/json',
+            Authorization: `Bearer ${session.token}`,
+        },
+    })
+    .then((res)=>{if(res.ok){return res.json();}})
+    .then((json)=>{
+        setTableData(json)
+    })
+    },[props.refresh]) */
 
     const filteredItems = tableData.filter(
 		item => item.name && item.name.toLowerCase().includes(nameFilter),
 	);
 
-    console.log(filteredItems)
-    console.log(nameFilter)
+
+
     return(
         <div className='flex flex-col gap-4'>
             <div className='flex gap-4 items-center'>
