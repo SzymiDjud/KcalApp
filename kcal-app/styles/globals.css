@@ -25,15 +25,15 @@ body {
 }
 
 .ps-sidebar-container {
-  background-color: #FFF !important;
+  background-color: #fff !important;
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.16);
   border-radius: 16px;
   width: 100% !important;
 }
 
 .ps-active {
-  background-color: #005EB8 !important;
-  color: #FFF !important;
+  background-color: #005eb8 !important;
+  color: #fff !important;
 }
 .ps-active img {
   filter: invert(1);
@@ -52,16 +52,16 @@ body {
 }
 
 .blueText {
-  color: #005EB8;
+  color: #005eb8;
 }
 
 .blueButton {
-  background-color: #005EB8;
-  border: 2px solid #005EB8;
+  background-color: #005eb8;
+  border: 2px solid #005eb8;
 }
 
 .blueButton:hover {
-  background-color: #FFF;
+  background-color: #fff;
   color: black;
 }
 .blueButton:hover img {

@@ -129,19 +129,19 @@ export default function TodayProductsTable(props){
     
     };
 
-    /*useEffect(()=>{
-    fetch(process.env.API_URL + `api/product-entries-today/`,{
-        method: 'GET',
-        headers: {
-            'Content-Type' : 'application/json',
-            Authorization: `Bearer ${session.token}`,
-        },
-    })
-    .then((res)=>{if(res.ok){return res.json();}})
-    .then((json)=>{
-        setTableData(json)
-    })
-},[props.refresh]) */
+    useEffect(()=>{
+        fetch(process.env.API_URL + `api/product-entries/today/`,{
+            method: 'GET',
+            headers: {
+                'Content-Type' : 'application/json',
+                Authorization: `Bearer ${session.token}`,
+            },
+        })
+        .then((res)=>{if(res.ok){return res.json();}})
+        .then((json)=>{
+            setTableData(json)
+        })
+    },[props.refresh])
     return(
         <div className='flex flex-col bg-white rounded-xl box-shadow min-w-full'>
         <DataTable

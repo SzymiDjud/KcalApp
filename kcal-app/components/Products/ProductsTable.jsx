@@ -85,19 +85,19 @@ export default function ProductsTable(props){
     
     };
     
-    /*useEffect(()=>{
-    fetch(process.env.API_URL + `api/products/`,{
-        method: 'GET',
-        headers: {
-            'Content-Type' : 'application/json',
-            Authorization: `Bearer ${session.token}`,
-        },
-    })
-    .then((res)=>{if(res.ok){return res.json();}})
-    .then((json)=>{
-        setTableData(json)
-    })
-},[]) */
+    useEffect(()=>{
+        fetch(process.env.API_URL + `api/products/`,{
+            method: 'GET',
+            headers: {
+                'Content-Type' : 'application/json',
+                Authorization: `Bearer ${session.token}`,
+            },
+        })
+        .then((res)=>{if(res.ok){return res.json();}})
+        .then((json)=>{
+            setTableData(json)
+        })
+    },[])
 
 
     return(
