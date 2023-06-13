@@ -1,13 +1,13 @@
 import TodayProductsTable from "@/components/Dashboard/TodayProductsTable"
 import AddProducts from "@/components/Dashboard/AddProducts"
 import { useState } from "react"
-import { getSession } from "next-auth/react"
+import { getSession, useSession } from "next-auth/react"
 import Link from "next/link"
 import Button from "@/components/Button"
 function Today(props){
 
     const [refresh, setRefresh] = useState(false)
-
+    const { data: session, status } = useSession()
     const deleteProduct = (id) => {
       fetch(process.env.API_URL + `api/product-entries/${id}`,{
         method: 'DELETE',
