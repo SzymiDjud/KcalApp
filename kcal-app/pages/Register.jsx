@@ -9,7 +9,9 @@ export default function Register(props){
         initialValues: {
           email: '',
           password: '',
-          confirmPassword: '',
+          password2: '',
+          weight: 0,
+          height: 0,
         },
         validationSchema: Yup.object({
             email: Yup.string()
@@ -23,13 +25,17 @@ export default function Register(props){
               "Hasło musi posiadać 8 znaków, w tym małą i wielką literę, cyfrę i znak specjalny."
             )
             .required("To pole nie może być puste"),           
-            confirmPassword: Yup.string()
-            .oneOf([Yup.ref('password'), null], 'Hasła muszą być identyczne').required("To pole nie może być puste"),          
+            password2: Yup.string()
+            .oneOf([Yup.ref('password'), null], 'Hasła muszą być identyczne').required("To pole nie może być puste"),      
+            weight: Yup.number()
+            .required("To pole nie może być puste"),             
+            height: Yup.number()
+            .required("To pole nie może być puste"),    
 
 
         }),
         onSubmit: values => {          
-            fetch(process.env.API_URL + `register/`,{
+            fetch(process.env.API_URL + `api/auth/register/`,{
                 method: 'POST',
                 headers: {
                     
@@ -39,7 +45,7 @@ export default function Register(props){
             })
             .then((res)=>res.json()
             .then((json)=>{
-
+                window.location.href = "/Login";
             })
             )
         },
@@ -78,18 +84,44 @@ export default function Register(props){
                             helperText={formik.errors.password}
                         />                        
                         <TextField
-                            id="confirmPassword"
-                            onChange={formik.handleChange("confirmPassword")}
+                            id="password2"
+                            onChange={formik.handleChange("password2")}
                             onBlur={formik.handleBlur}
-                            value={formik.values.confirmPassword}
+                            value={formik.values.password2}
                             className=''
                             label="Powtórz hasło"
                             type="password"
                             variant="outlined"
-                            error = {formik.errors.confirmPassword ? (
+                            error = {formik.errors.password2 ? (
                                 true
                             ) : null}
-                            helperText={formik.errors.confirmPassword}
+                            helperText={formik.errors.password2}
+                        />                        
+                        <TextField
+                            id="weight"
+                            onChange={formik.handleChange("weight")}
+                            onBlur={formik.handleBlur}
+                            value={formik.values.weight}
+                            className=''
+                            label="Podaj swoją wagę w kilogramach"
+                            variant="outlined"
+                            error = {formik.errors.weight ? (
+                                true
+                            ) : null}
+                            helperText={formik.errors.weight}
+                        />                        
+                        <TextField
+                            id="height"
+                            onChange={formik.handleChange("height")}
+                            onBlur={formik.handleBlur}
+                            value={formik.values.height}
+                            className=''
+                            label="Podaj swój wzrost"
+                            variant="outlined"
+                            error = {formik.errors.height ? (
+                                true
+                            ) : null}
+                            helperText={formik.errors.height}
                         />
                         <button type="submit" className="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded">Zarejestruj się</button>
                         <span>Masz już konto? <Link href="/Login"> <b>Zaloguj się</b></Link></span>

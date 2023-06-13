@@ -68,7 +68,7 @@ export default async function auth(req, res) {
     secret: process.env.NEXTAUTH_SECRET,
     callbacks: {
       async session({ session,token, user }) {
-        session.token = token.access
+        session.token = token.token
         return session
       },
       jwt,
