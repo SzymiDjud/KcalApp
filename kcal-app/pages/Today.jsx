@@ -24,7 +24,7 @@ function Today(props){
     const addProduct = (id,amount) => {
 
       let payload = {
-        product_id: id,
+        productId: id,
         amount: amount,
       }
 
