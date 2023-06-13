@@ -2,8 +2,8 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import TextField from '@mui/material/TextField';
 import Link from 'next/link';
-
-export default function Register(props){
+import { useSession, getSession } from 'next-auth/react';
+function Register(props){
 
     const formik = useFormik({
         initialValues: {
@@ -136,3 +136,22 @@ export default function Register(props){
         </div>
     )
 }
+
+export async function getServerSideProps(context) {
+    const session = await getSession({ req: context.req });
+  
+    if (session) {
+      return {
+        redirect: {
+          destination: '/Dashboard',
+          permanent: false,
+        },
+      };
+    }
+  
+    return {
+      props: { session },
+    };
+  }
+
+  export default Register;
