@@ -21,6 +21,7 @@ export default async function auth(req, res) {
                 body: JSON.stringify(credentials),
                 headers: { "Content-Type": "application/json" }
               })
+              console.log(res)
               const user = await res.json()
               conosle.log(user)
 
