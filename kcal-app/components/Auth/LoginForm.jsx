@@ -34,12 +34,12 @@ export default function LoginForm(props) {
     
     const formik = useFormik({
         initialValues: {
-          username: '',
+          email: '',
           password: '',
         },
         validationSchema: Yup.object({
-            username: Yup.string()
-
+          email: Yup.string()
+            .email("Podaj poprawny adres email")
             .required("Email jest wymagany"),
             password: Yup.string()
 
@@ -61,17 +61,17 @@ export default function LoginForm(props) {
                 <h2 className="bigHeader">Zaloguj się</h2> 
                 <form onSubmit={formik.handleSubmit} className='flex flex-col gap-6'>
                         <TextField
-                            id="username"
-                            onChange={formik.handleChange("username")}
+                            id="email"
+                            onChange={formik.handleChange("email")}
                             onBlur={formik.handleBlur}
-                            value={formik.values.username}
+                            value={formik.values.email}
                             className=''
-                            label="username" 
+                            label="email" 
                             variant="outlined"
-                            error = {formik.errors.username ? (
+                            error = {formik.errors.email ? (
                                 true
                             ) : null}
-                            helperText={formik.errors.username}
+                            helperText={formik.errors.email}
                         />                        
                         <TextField
                             id="password"
