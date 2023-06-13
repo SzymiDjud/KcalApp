@@ -38,11 +38,11 @@ function Register(props) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email: values.email,
-          password: values.password,
-          password2: values.password2,
-          weight: parseFloat(values.weight),
-          height: parseFloat(values.height),
+          "email": values.email,
+          "password": values.password,
+          "password2": values.password2,
+          "weight": parseFloat(values.weight),
+          "height": parseFloat(values.height),
         }),
       }).then((res) => {
         if (res.ok) {
