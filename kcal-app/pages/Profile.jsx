@@ -7,19 +7,19 @@ function Profile(props){
     const [userData, setUserData] = useState()
     const { data: session, status } = useSession()
   
-          /*useEffect(()=>{
-    fetch(process.env.API_URL + `api/profile/`,{
-        method: 'GET',
-        headers: {
-            'Content-Type' : 'application/json',
-            Authorization: `Bearer ${session.token}`,
-        },
-    })
-    .then((res)=>{if(res.ok){return res.json();}})
-    .then((json)=>{
-        setUserData(json)
-    })
-  },[]) */
+    useEffect(()=>{
+      fetch(process.env.API_URL + `api/profile/`,{
+          method: 'GET',
+          headers: {
+              'Content-Type' : 'application/json',
+              Authorization: `Bearer ${session.token}`,
+          },
+      })
+      .then((res)=>{if(res.ok){return res.json();}})
+      .then((json)=>{
+          setUserData(json)
+      })
+    },[])
 
 
     return(

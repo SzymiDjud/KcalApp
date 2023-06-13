@@ -106,19 +106,19 @@ export default function addProducts(props){
 
  
 
-     /*useEffect(()=>{
-    fetch(process.env.API_URL + `api/products/`,{
-        method: 'GET',
-        headers: {
-            'Content-Type' : 'application/json',
-            Authorization: `Bearer ${session.token}`,
-        },
-    })
-    .then((res)=>{if(res.ok){return res.json();}})
-    .then((json)=>{
-        setTableData(json)
-    })
-    },[props.refresh]) */
+    useEffect(()=>{
+        fetch(process.env.API_URL + `api/products/`,{
+            method: 'GET',
+            headers: {
+                'Content-Type' : 'application/json',
+                Authorization: `Bearer ${session.token}`,
+            },
+        })
+        .then((res)=>{if(res.ok){return res.json();}})
+        .then((json)=>{
+            setTableData(json)
+        })
+    },[props.refresh])
 
     const filteredItems = tableData.filter(
 		item => item.name && item.name.toLowerCase().includes(nameFilter),
