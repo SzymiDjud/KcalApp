@@ -49,10 +49,9 @@ function Register(props){
                     "height": parseFloat(values.height),
                   }),
             })
-            .then((res)=>res.json()
-            .then((json)=>{
+            .then((res)=>{if(res.ok){
                 window.location.href = "/Login";
-            })
+            }}
             )
         },
       });
