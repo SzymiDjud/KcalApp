@@ -15,27 +15,30 @@ export default async function auth(req, res) {
       },
 
       async authorize(credentials) {
-        
+        console.log(credentials);
         try {
-            const res = await fetch("https://localhost:7060/api/auth/login/", {
+            var body = JSON.stringify({
+              "email": credentials.email,
+              "password": credentials.password,
+            })
+            const res = await fetch("http://localhost:7060/api/auth/login", {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                  email: credentials.email,
-                  password: credentials.password,
-                }),
+                body: body,
               })
               console.log(res)
               const user = await res.json()
-              conosle.log(user)
+              console.log(user)
 
           if (res.ok) {
             return user
           }
-          throw new Error("Error logging in")
+          console.log("Error logging in 1")
+          throw new Error(res)
           return null
         } catch (e) {
-            throw new Error("Error logging in")
+          console.log("Error logging in 2 ")
+            throw new Error(e)
             return null
         }
       },
@@ -73,7 +76,7 @@ export default async function auth(req, res) {
     secret: process.env.NEXTAUTH_SECRET,
     callbacks: {
       async session({ session,token, user }) {
-        session.token = token.token
+        session.token = token.token;
         return session
       },
       jwt,
