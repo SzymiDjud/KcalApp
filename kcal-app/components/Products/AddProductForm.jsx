@@ -37,7 +37,7 @@ export default function AddProductForm(props){
             fetch(process.env.API_URL + `api/products/`,{
                 method: 'POST',
                 headers: {
-                    
+                    'Content-Type' : 'application/json',
                     Authorization: `Bearer ${session.token}`,
                 },
                 body: JSON.stringify(values),
