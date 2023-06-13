@@ -14,7 +14,7 @@ export default function LoginForm(props) {
         try {
           const callbackUrl = "/Dashboard"
           const result = await signIn("credentials", {
-            username: values.username,
+            email: values.email,
             password: values.password,
             redirect: false,
             callbackUrl,
