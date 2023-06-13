@@ -61,7 +61,7 @@ export default function Register(props){
         <div className="flex flex-col gap-4  px-6 py-2 ">
             <div className="flex flex-col bg-white rounded-xl box-shadow p-12  gap-4 items-center ">
                 <h2 className="bigHeader">Zarejestruj się</h2> 
-                <form onSubmit={formik.handleSubmit} className='flex flex-col gap-6 min-width-[584px]'>
+                <form onSubmit={formik.handleSubmit} className='flex flex-col gap-6 min-w-[584px]'>
                         <TextField
                             id="email"
                             onChange={formik.handleChange("email")}
