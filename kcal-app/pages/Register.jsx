@@ -33,7 +33,7 @@ function Register(props) {
     }),
     onSubmit: (values) => {
       fetch(process.env.API_URL + `api/auth/register/`, {
-        method: "POST",
+        method: 'POST',
         headers: {
         "accept": "*/*",
           "Content-Type": "application/json",
