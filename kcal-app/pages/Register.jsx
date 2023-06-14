@@ -114,7 +114,7 @@ function Register(props) {
             onBlur={formik.handleBlur}
             value={formik.values.height}
             className=""
-            label="Podaj swój wzrost"
+            label="Podaj swój wzrost w centymetrach"
             variant="outlined"
             error={formik.errors.height ? true : null}
             helperText={formik.errors.height}

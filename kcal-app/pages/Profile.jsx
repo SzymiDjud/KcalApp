@@ -29,16 +29,16 @@ function Profile(props){
                 <div className="flex gap-12">
                     <div className="flex flex-col gap-4">
                         <h3 className="blueText mediumHeader font-bold">Informacje</h3>
-                        <span>Email: <b>dupa@gmail.com</b></span>
-                        <span>Wzrost: <b>269 cm</b></span>
-                        <span>Waga: <b>69 kg</b></span>
+                        <span>Email: <b>{userData && userData.email}</b></span>
+                        <span>Wzrost: <b>{userData && userData.height} cm</b></span>
+                        <span>Waga: <b>{userData && userData.weight} kg</b></span>
                     </div>
                     <div className="flex flex-col gap-4">
                         <h3 className="blueText mediumHeader font-bold">Twoje limity</h3>
-                        <span>Kcal: <b className="blueText">1000</b></span>
-                        <span>Białko: <b className="blueText">10</b></span>
-                        <span>Węglowodany: <b className="blueText">200</b></span>
-                        <span>Tłuszcze: <b className="blueText">300</b></span>
+                        <span>Kcal: <b className="blueText">{userData && userData.kcal_limit}</b></span>
+                        <span>Białko: <b className="blueText">{userData && userData.protein_limit}</b></span>
+                        <span>Węglowodany: <b className="blueText">{userData && userData.carbohydrate_limit}</b></span>
+                        <span>Tłuszcze: <b className="blueText">{userData && userData.fat_limit}</b></span>
                     </div>
                 </div>
             </div>
