@@ -10,19 +10,19 @@ export default function TodaySum() {
 
   const [chartsData, setChartsData] = useState();
 
-  /*useEffect(()=>{
-    fetch(process.env.API_URL + `api/daily-summary/`,{
-        method: 'GET',
-        headers: {
-            'Content-Type' : 'application/json',
-            Authorization: `Bearer ${session.token}`,
-        },
-    })
-    .then((res)=>{if(res.ok){return res.json();}})
-    .then((json)=>{
-        setChartsData(json)
-    })
-    },[props.refresh]) */
+  useEffect(()=>{
+      fetch(process.env.API_URL + `api/daily-summary/`,{
+          method: 'GET',
+          headers: {
+              'Content-Type' : 'application/json',
+              Authorization: `Bearer ${session.token}`,
+          },
+      })
+      .then((res)=>{if(res.ok){return res.json();}})
+      .then((json)=>{
+          setChartsData(json)
+      })
+    },[props.refresh])
 
     const data = {
         labels: ['Kalorie',],
