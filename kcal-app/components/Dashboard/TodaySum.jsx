@@ -22,7 +22,7 @@ export default function TodaySum() {
       .then((json)=>{
           setChartsData(json)
       })
-    },[props.refresh])
+    },[])
 
     const data = {
         labels: ['Kalorie',],
