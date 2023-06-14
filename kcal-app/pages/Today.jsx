@@ -16,10 +16,8 @@ function Today(props){
             Authorization: `Bearer ${session.token}`,
         },
     })
-    .then((res)=>{if(res.ok){return res.json();}})
-    .then((json)=>{
-        setRefresh(element => !element)
-    })
+    .then((res)=>{if(res.ok){setRefresh(element => !element)}})
+
     }    
     const addProduct = (id,amount) => {
 
@@ -36,10 +34,7 @@ function Today(props){
         },
         body: JSON.stringify(payload),
     })
-    .then((res)=>{if(res.ok){return res.json();}})
-    .then((json)=>{
-        setRefresh(element => !element)
-    })
+    .then((res)=>{if(res.ok){setRefresh(element => !element)}})
     }
 
     return(
