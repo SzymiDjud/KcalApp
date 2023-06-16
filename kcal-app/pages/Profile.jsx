@@ -35,10 +35,10 @@ function Profile(props){
                     </div>
                     <div className="flex flex-col gap-4">
                         <h3 className="blueText mediumHeader font-bold">Twoje limity</h3>
-                        <span>Kcal: <b className="blueText">{userData && userData.kcal_limit}</b></span>
-                        <span>Białko: <b className="blueText">{userData && userData.protein_limit}</b></span>
-                        <span>Węglowodany: <b className="blueText">{userData && userData.carbohydrate_limit}</b></span>
-                        <span>Tłuszcze: <b className="blueText">{userData && userData.fat_limit}</b></span>
+                        <span>Kcal: <b className="blueText">{userData && userData.kcalLimit}</b></span>
+                        <span>Białko: <b className="blueText">{userData && userData.proteinLimit}</b></span>
+                        <span>Węglowodany: <b className="blueText">{userData && userData.carbohydrateLimit}</b></span>
+                        <span>Tłuszcze: <b className="blueText">{userData && userData.fatLimit}</b></span>
                     </div>
                 </div>
             </div>
