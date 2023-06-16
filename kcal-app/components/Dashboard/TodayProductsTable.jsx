@@ -32,7 +32,7 @@ export default function TodayProductsTable(props){
         },                      
         {
             name: 'Węglowodany',
-            selector: row => row.carbs,
+            selector: row => row.carbohydrate,
             sortable: true,
             
         },
@@ -70,7 +70,7 @@ export default function TodayProductsTable(props){
         },                      
         {
             name: 'Węglowodany',
-            selector: row => row.carbs,
+            selector: row => row.carbohydrate,
             sortable: true,
             
         },
@@ -97,7 +97,7 @@ export default function TodayProductsTable(props){
         brand: "Berlinki",
         kcal: 100,
         protein: 10,
-        carbs: 20,
+        carbohydrate: 20,
         fat: 30,
     },    
     {
@@ -106,7 +106,7 @@ export default function TodayProductsTable(props){
         brand: "Nawłoka",
         kcal: 1000,
         protein: 100,
-        carbs: 200,
+        carbohydrate: 200,
         fat: 300,
     },
 ]

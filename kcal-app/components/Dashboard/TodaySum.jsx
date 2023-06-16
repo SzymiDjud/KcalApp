@@ -100,22 +100,22 @@ export default function TodaySum() {
                 <div className='flex flex-col items-center  gap-2'>
                     <h3 className='mediumHeader font-bold'>Kalorie</h3>
                     <Doughnut data={data} options={options} className='max-h-[200px]'/>
-                    <h4 className='font-bold'>{chartsData && chartsData.kcal}/{chartsData && chartsData.kcal_limit}kcal</h4>
+                    <h4 className='font-bold'>{chartsData && chartsData.kcal}/{chartsData && chartsData.kcalLimit}kcal</h4>
                 </div>
                 <div className='flex flex-col items-center  gap-2'>
                     <h3 className='mediumHeader font-bold'>Białko</h3>
                     <Doughnut data={data2} options={options} className='max-h-[200px]'/>
-                    <h4 className='font-bold'>{chartsData && chartsData.protein}/{chartsData && chartsData.protein_limit}g</h4>
+                    <h4 className='font-bold'>{chartsData && chartsData.protein}/{chartsData && chartsData.proteinLimit}g</h4>
                 </div>
                 <div className='flex flex-col items-center  gap-2'>
                     <h3 className='mediumHeader font-bold'>Węglowodany</h3>
                     <Doughnut data={data3} options={options} className='max-h-[200px]'/>
-                    <h4 className='font-bold'>{chartsData && chartsData.carbohydrate}/{chartsData && chartsData.carbohydrate_limit}g</h4>
+                    <h4 className='font-bold'>{chartsData && chartsData.carbohydrate}/{chartsData && chartsData.carbohydrateLimit}g</h4>
                 </div>
                 <div className='flex flex-col items-center  gap-2'>
                     <h3 className='mediumHeader font-bold'>Tłuszcze</h3>
                         <Doughnut data={data4} options={options} className='max-h-[200px]'/>
-                    <h4 className='font-bold'>{chartsData && chartsData.fat}/{chartsData && chartsData.fat_limit}g</h4>
+                    <h4 className='font-bold'>{chartsData && chartsData.fat}/{chartsData && chartsData.fatLimit}g</h4>
                 </div>
                 
             </div>
